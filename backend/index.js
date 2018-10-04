@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////////////////////
+//This was removed from production after creating the Generation Class
+////////////////////////////////////////////////////////////////////////
+
 // const Dragon = require('./dragon.js');//Leave the file extension (.js) to remove any confusion later
 
 // const fooey = new Dragon({
@@ -20,16 +24,33 @@
 // console.log('baloo', baloo);
 // console.log('mimar', mimar);
 
-const Generation = require('./generation.js');
+//////////////////////////////////////////////////////////////////////////////
+//This was removed from production after creating the Generation Engine Class
+//////////////////////////////////////////////////////////////////////////////
 
-const generation = new Generation();
+// const Generation = require('./generation.js');
 
-console.log('generation', generation);
+// const generation = new Generation();
 
-const gooby = generation.newDragon();
-console.log('gooby', gooby);
+// console.log('generation', generation);
+
+// const gooby = generation.newDragon();
+// console.log('gooby', gooby);
+
+// setTimeout(() => {
+//     const mimar = generation.newDragon();
+//     console.log('mimar', mimar);
+// }, 15000)
+
+///////////////////////////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////////////////////////
+const GenerationEngine = require('./engine.js');
+
+const engine = new GenerationEngine();
+
+engine.start();
 
 setTimeout(() => {
-    const mimar = generation.newDragon();
-    console.log('mimar', mimar);
-}, 15000)
+    engine.stop();
+}, 20000);
