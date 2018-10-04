@@ -6,7 +6,8 @@ const fooey = new Dragon({
 });
 const baloo = new Dragon({//Switched to show that order no longer matters
     nickname: 'baloo',
-    birthdate: new Date()
+    birthdate: new Date(),
+    traits: [{traitType: 'backgroundColor', traitValue: 'green'}]
 });
 const mimar = new Dragon();
 
