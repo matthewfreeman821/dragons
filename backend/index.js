@@ -43,14 +43,12 @@
 // }, 15000)
 
 ///////////////////////////////////////////////////////////////////////////////////
-//
+//This was setup when the Generation Engine was created in order to test
 ///////////////////////////////////////////////////////////////////////////////////
+const express = require('express');
 const GenerationEngine = require('./engine.js');
 
 const engine = new GenerationEngine();
 
 engine.start();
 
-setTimeout(() => {
-    engine.stop();
-}, 20000);
