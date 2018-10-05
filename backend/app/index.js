@@ -46,11 +46,10 @@
 //This was setup when the Generation Engine was created in order to test
 ///////////////////////////////////////////////////////////////////////////////////
 const express = require('express');
-const GenerationEngine = require('./engine.js');
+const GenerationEngine = require('./generation/engine');
 
 const app = express();
 const engine = new GenerationEngine();
-const port = 3000
 
 engine.start();
 
@@ -58,4 +57,4 @@ app.get('/dragon/new', (req, res) => {
     res.json({ dragon: engine.generation.newDragon() });
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+module.exports = app;
