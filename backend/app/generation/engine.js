@@ -13,14 +13,24 @@ class GenerationEngine {
         clearTimeout(this.timer);
     }
     buildNewGeneration() {
-        this.generation = new Generation();
-        GenerationTable.storeGeneration(this.generation);
-        console.log('new generation', this.generation);
-        //This calls the building new generation function when the old generation expires
-        this.timer = setTimeout(
-            () => this.buildNewGeneration(), 
-        this.generation.expiration.getTime() - Date.now()
-        );
+        const generation = new Generation();
+
+        GenerationTable.storeGeneration(generation)
+            .then(({ generationId }) => {
+                this.generation = generation;
+
+                // console.log(this.generation.generationId);
+                this.generation.generationId = generationId;
+                // console.log(this.generation.genrationID);
+                
+                console.log('new generation', this.generation);
+                //This calls the building new generation function when the old generation expires
+                this.timer = setTimeout(
+                    () => this.buildNewGeneration(), 
+                this.generation.expiration.getTime() - Date.now()
+                );
+            })
+            .catch(error => console.error(error));
     }
 }
 
