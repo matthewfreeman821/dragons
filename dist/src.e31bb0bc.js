@@ -18453,7 +18453,15 @@ function (_Component) {
       }
     }, _this.fetchGeneration = function () {
       fetch('http://localhost:3000/generation').then(function (response) {
-        return console.log('response', response);
+        return response.json();
+      }).then(function (json) {
+        console.log('json', json);
+
+        _this.setState({
+          generation: json.generation
+        });
+      }).catch(function (error) {
+        return console.error('error', error);
       });
     }, _temp));
   }
@@ -18515,7 +18523,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58897" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49757" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
