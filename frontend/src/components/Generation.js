@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+const DEFAULT_GENERATION = { generationId: '', expiration: ''};
+
 class Generation extends Component {
-    state = { generation: { generationId: 999, expiration: '2020-05-01' } };
+    state = { generation: DEFAULT_GENERATION };
 
     componentDidMount() {
         this.fetchGeneration();
