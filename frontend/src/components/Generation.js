@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
 const DEFAULT_GENERATION = { generationId: '', expiration: ''};
+const MINIMUM_DELAY = 3000;
 
 class Generation extends Component {
     state = { generation: DEFAULT_GENERATION };
 
     componentDidMount() {
-        this.fetchGeneration();
+        this.fetchNextGeneration();
     }
 
     fetchGeneration = () => {
@@ -24,6 +25,10 @@ class Generation extends Component {
         this.fetchGeneration();
 
         let delay = new Date(this.state.generation.expiration).getTime() - new Date().getTime();
+
+        if (delay < MINIMUM_DELAY) {
+            delay = MINIMUM_DELAY;
+        };
 
         setTimeout(() => this.fetchNextGeneration(), delay);
     };
