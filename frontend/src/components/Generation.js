@@ -6,8 +6,14 @@ const MINIMUM_DELAY = 3000;
 class Generation extends Component {
     state = { generation: DEFAULT_GENERATION };
 
+    timer = null;
+
     componentDidMount() {
         this.fetchNextGeneration();
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timer);
     }
 
     fetchGeneration = () => {
@@ -30,7 +36,7 @@ class Generation extends Component {
             delay = MINIMUM_DELAY;
         };
 
-        setTimeout(() => this.fetchNextGeneration(), delay);
+        this.timer = setTimeout(() => this.fetchNextGeneration(), delay);
     };
 
     render() {
