@@ -20,6 +20,14 @@ class Generation extends Component {
             .catch(error => console.error('error', error));
     };
 
+    fetchNextGeneration = () => {
+        this.fetchGeneration();
+
+        let delay = new Date(this.state.generation.expiration).getTime() - new Date().getTime();
+
+        setTimeout(() => this.fetchNextGeneration(), delay);
+    };
+
     render() {
         const { generation } = this.state;
 
