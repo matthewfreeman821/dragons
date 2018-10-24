@@ -28,7 +28,7 @@ class Dragon extends Component {
         return (
             <div>
                 <span>G{generationId}.</span>
-                <span>I{dragonId}.</span>
+                <span>I{dragonId}. </span>
                 { traits.map(trait => trait.traitValue).join(', ') }
             </div>
         )
