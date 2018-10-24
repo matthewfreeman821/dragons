@@ -24,7 +24,7 @@ class Dragon extends Component {
     }
 
     render() {
-        return <DragonAvatar />;
+        return <DragonAvatar dragon={this.state.dragon} />;
     }
 }
 

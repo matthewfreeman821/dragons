@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class DragonAvatar extends Component {
     render() {
-        const { generationId, dragonId, traits } = this.state.dragon;
+        const { generationId, dragonId, traits } = this.props.dragon;
 
         return (
             <div>
