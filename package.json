@@ -20,7 +20,5 @@
     "url": "https://github.com/matthewfreeman821/dragons/issues"
   },
   "homepage": "https://github.com/matthewfreeman821/dragons#readme",
-  "dependencies": {
-    "react-bootstrap": "^0.32.1"
-  }
+  "dependencies": {}
 }
