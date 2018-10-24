@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootsrap';
 import DragonAvatar from './DragonAvatar';
 
 const DEFAULT_DRAGON = {
