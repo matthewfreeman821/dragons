@@ -5,7 +5,7 @@ import Dragon from './components/Dragon';
 
 render(
     <div>
-        <h2>Dragon Stack from React</h2>
+        <h2>Dragon Stack</h2>
         <Generation />
         <Dragon />
     </div>,
