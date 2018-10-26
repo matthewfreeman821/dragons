@@ -14,6 +14,16 @@ const propertyMap = {
 };
 
 class DragonAvatar extends Component {
+    get DragonImage() {
+        return (
+            <div className="dragon-avatar-image-wrapper">
+                <div className="dragon-avatar-image-background" style={{ backgroundColor: propertyMap.backgroundColor.blue }}></div>
+                <img src={propertyMap.pattern.spotted} alt="" className="dragon-avatar-image-pattern"/>
+                <img src={propertyMap.build.sporty} alt="" className="dragon-avatar-image"/>
+            </div>
+        );
+    }
+
     render() {
         const { generationId, dragonId, traits } = this.props.dragon;
 
