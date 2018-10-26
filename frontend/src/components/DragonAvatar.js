@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { skinny, slender, sporty, spotted, stocky, striped, patchy, plain } from '../assets';
 
 const propertyMap = {
     backgroundColor: { 
