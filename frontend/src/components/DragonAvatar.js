@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 const propertyMap = {
     backgroundColor: { 
-        black: '#000000', 
-        white: '#FFFFFF',
-        green: '#00FF00', 
-        blue: '#0000FF' 
+        black: '#263238', 
+        white: '#CFD8DC',
+        green: '#A5D6A7', 
+        blue: '#0277BD' 
     },
     build: { slender, stocky, sporty, skinny },
     pattern: { plain, striped, spotted, patchy},
-    size: { small, medium, large, enormous }
+    size: { small: 100, medium: 140, large: 180, enormous: 220 }
 };
 
 class DragonAvatar extends Component {
