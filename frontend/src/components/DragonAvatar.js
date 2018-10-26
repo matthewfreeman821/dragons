@@ -15,13 +15,23 @@ const propertyMap = {
 
 class DragonAvatar extends Component {
     get DragonImage() {
-        const sizing = {width: 200, height: 200 };
+        const dragonPropertyMap = {};
+
+        this.props.dragon.traits.forEach(trait => {
+            const { traitType, traitValue } = trait;
+
+            dragonPropertyMap[traitType] = propertyMap[traitType][traitValue];
+        });
+
+        const { backgroundColor, build, pattern, size } = dragonPropertyMap;
+
+        const sizing = {width: size, height: size };
 
         return (
             <div className="dragon-avatar-image-wrapper">
-                <div className="dragon-avatar-image-background" style={{ backgroundColor: propertyMap.backgroundColor.blue, ...sizing }}></div>
-                <img src={propertyMap.pattern.spotted} alt="" className="dragon-avatar-image-pattern" style={{ ...sizing}} />
-                <img src={propertyMap.build.sporty} alt="" className="dragon-avatar-image" style={{ ...sizing}} />
+                <div className="dragon-avatar-image-background" style={{ backgroundColor, ...sizing }}></div>
+                <img src={pattern} alt="" className="dragon-avatar-image-pattern" style={{ ...sizing}} />
+                <img src={build} alt="" className="dragon-avatar-image" style={{ ...sizing}} />
             </div>
         );
     }
