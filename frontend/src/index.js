@@ -1,8 +1,11 @@
 import React from 'react';
+import { createStore } from 'redux';
 import { render } from 'react-dom';
 import Generation from './components/Generation';
 import Dragon from './components/Dragon';
 import './index.css';
+
+const store = createStore();
 
 render(
     <div>
