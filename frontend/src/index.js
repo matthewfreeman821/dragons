@@ -7,14 +7,26 @@ import './index.css';
 
 const DEFAULT_GENERATION = { generationId: '', expiration: '' }
 
-const generationReducer = (state) => {
-    console.log('generationReducer state', state)
+const generationReducer = (state, action) => {
+    console.log('generationReducer state', state);
+    console.log('generationReducer action', action);
+
+    if (action.type === 'GENERATION_ACTION_TYPE') {
+        return { generation: action.generation };
+    }
+
     return { generation: DEFAULT_GENERATION };
 }
 
 const store = createStore(generationReducer);
 
-store.dispatch({type: 'foo'});
+store.dispatch({ type: 'foo' });
+store.dispatch({ 
+    type: 'GENERATION_ACTION_TYPE',
+    generation: { generationId: 'goo', expiration: 'bar'}
+});
+
+console.log('store.getState()', store.getState());
 
 render(
     <div>
