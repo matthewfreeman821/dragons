@@ -7,14 +7,14 @@ import './index.css';
 
 const DEFAULT_GENERATION = { generationId: '', expiration: '' }
 
-const generationReducer = () => {
+const generationReducer = (state) => {
+    console.log('generationReducer state', state)
     return { generation: DEFAULT_GENERATION };
 }
 
 const store = createStore(generationReducer);
 
-console.log('store', store);
-console.log('store.getState()', store.getState());
+store.dispatch({type: 'foo'});
 
 render(
     <div>
