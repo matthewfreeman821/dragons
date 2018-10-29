@@ -19,9 +19,7 @@ class Generation extends Component {
         fetch('http://localhost:3000/generation')
             .then(response => response.json())
             .then(json => {
-                this.props.dispatch(
-                    generationActionCreator(json.generation)
-                );
+                this.props.dispatchGeneration(json.generation);
             })
             .catch(error => console.error('error', error));
     };
@@ -58,6 +56,14 @@ const mapStateToProps = state => {
     return { generation };
 };
 
-const componentConnector = connect(mapStateToProps);
+const mapDispatchToProps = dispatch => {
+    return {
+        dispatchGeneration: generation => dispatch (
+            generationActionCreator(generation)
+        )
+    }
+};
+
+const componentConnector = connect(mapStateToProps, mapDispatchToProps);
 
 export default componentConnector(Generation);
