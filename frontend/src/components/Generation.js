@@ -47,11 +47,6 @@ const mapStateToProps = state => {
     return { generation };
 };
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         fetchGeneration: () => fetchGeneration(dispatch)
-//     }
-// };
 
 const fetchGeneration = () => dispatch => {
     return fetch('http://localhost:3000/generation')
