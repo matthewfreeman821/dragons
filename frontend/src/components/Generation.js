@@ -42,7 +42,7 @@ class Generation extends Component {
     render() {
         console.log('this.props', this.props);
 
-        const { generation } = this.state;
+        const { generation } = this.props;
 
         return (
             <div>
@@ -53,6 +53,12 @@ class Generation extends Component {
     }
 }
 
-const componentConnector = connect();
+const mapStateToProps = state => {
+    const generation = state.generation;
+
+    return { generation };
+};
+
+const componentConnector = connect(mapStateToProps);
 
 export default componentConnector(Generation);
