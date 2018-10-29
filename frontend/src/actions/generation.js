@@ -1,17 +1,26 @@
 import { GENERATION } from './types';
 
-export const generationActionCreator = (payload) => {
-    return {
-        type: GENERATION_ACTION_TYPE,
-        generation: payload
-    };
-}
+export const fetchGeneration = () => dispatch => {
+    dispatch({ type: GENERATION.FETCH });
 
-const fetchGeneration = () => dispatch => {
     return fetch('http://localhost:3000/generation')
         .then(response => response.json())
         .then(json => {
-            dispatch(generationActionCreator(json.generation))
+            if (json.type === 'error') {
+                dispatch({
+                    type: GENERATION.FETCH_ERROR,
+                    message: json.message
+                });
+            } else {
+                dispatch({ 
+                    type: GENERATION.FETCH_SUCCESS,
+                    generation: json.generation
+                });
+            }
+
         })
-        .catch(error => console.error('error', error));
+        .catch(error => dispatch({ 
+            type: GENERATION.FETCH_ERROR,
+            message: error.message
+        }));
 }
