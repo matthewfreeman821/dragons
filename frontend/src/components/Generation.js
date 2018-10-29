@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { generationActionCreator } from '../actions/generation';
 
 const DEFAULT_GENERATION = { generationId: '', expiration: ''};
 const MINIMUM_DELAY = 3000;
@@ -21,8 +22,11 @@ class Generation extends Component {
         fetch('http://localhost:3000/generation')
             .then(response => response.json())
             .then(json => {
-
                 this.setState({ generation: json.generation });
+
+                this.props.dispatch(
+                    generationActionCreator(json.generation)
+                );
             })
             .catch(error => console.error('error', error));
     };
