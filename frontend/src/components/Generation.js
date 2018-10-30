@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchGeneration } from '../actions/generation';
+import fetchStates from '../reducers/fetchStates';
 
 const MINIMUM_DELAY = 3000;
 
@@ -31,6 +32,14 @@ class Generation extends Component {
         console.log('this.props', this.props);
 
         const { generation } = this.props;
+
+        if (generation.status === fetchStates.fetching) {
+            return <div>...</div>;
+        }
+
+        if (generation.status === fetchStates.error) {
+            return <div>{generation.message}</div>;
+        }
 
         return (
             <div>
