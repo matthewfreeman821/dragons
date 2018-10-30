@@ -37,3 +37,7 @@ body {
 .dragon-avatar-image {
     z-index: 0;
 }
+
+.col-md-3 {
+    margin: 5px;
+}

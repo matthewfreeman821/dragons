@@ -16,8 +16,8 @@ const store = createStore(
 
 render(
     <Provider store={store}>
-        <div className="container">
-            <h2>Dragon Stack</h2>
+        <div className="row">
+            <h2 className="col-md-3">Dragon Stack</h2>
             <Generation />
             <Dragon />
         </div>
