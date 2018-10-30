@@ -5,8 +5,7 @@ body {
 }
 
 .container {
-    display: flex;
-    align-items: center;
+    display: block;
 }
 
 .logout-button {
