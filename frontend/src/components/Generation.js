@@ -24,7 +24,7 @@ class Generation extends Component {
             delay = MINIMUM_DELAY;
         };
 
-        // this.timer = setTimeout(() => this.fetchNextGeneration(), delay);
+        this.timer = setTimeout(() => this.fetchNextGeneration(), delay);
     };
 
     render() {

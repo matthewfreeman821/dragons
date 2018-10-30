@@ -10,7 +10,7 @@ const generationReducer = (state = DEFAULT_GENERATION, action) => {
         case GENERATION.FETCH_ERROR:
             return { ...state, message: action.message };
         case GENERATION.FETCH_SUCCESS:
-            return { ...state, generation: action.generation };
+            return { ...state, ...action.generation };
         default:
             return state;
     }
