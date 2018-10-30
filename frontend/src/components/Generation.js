@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { generationActionCreator } from '../actions/generation';
+import { fetchGeneration } from '../actions/generation';
 
 const MINIMUM_DELAY = 3000;
 
@@ -24,7 +24,7 @@ class Generation extends Component {
             delay = MINIMUM_DELAY;
         };
 
-        this.timer = setTimeout(() => this.fetchNextGeneration(), delay);
+        // this.timer = setTimeout(() => this.fetchNextGeneration(), delay);
     };
 
     render() {
