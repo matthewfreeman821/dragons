@@ -16,7 +16,7 @@ const store = createStore(
 
 render(
     <Provider store={store}>
-        <div>
+        <div className="container">
             <h2>Dragon Stack</h2>
             <Generation />
             <Dragon />

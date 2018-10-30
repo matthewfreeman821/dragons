@@ -4,6 +4,11 @@ body {
     font-size: 20px;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+}
+
 .logout-button {
     position: absolute;
     right: 30px;

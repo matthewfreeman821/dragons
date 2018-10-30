@@ -28,7 +28,7 @@ class DragonAvatar extends Component {
         const sizing = {width: size, height: size };
 
         return (
-            <div className="dragon-avatar-image-wrapper">
+            <div className="dragon-avatar-image-wrapper dragon-picture">
                 <div className="dragon-avatar-image-background" style={{ backgroundColor, ...sizing }}></div>
                 <img src={pattern} alt="" className="dragon-avatar-image-pattern" style={{ ...sizing}} />
                 <img src={build} alt="" className="dragon-avatar-image" style={{ ...sizing}} />
@@ -42,7 +42,7 @@ class DragonAvatar extends Component {
         if (!dragonId) return <div></div>;
 
         return (
-            <div>
+            <div className="dragon-information">
                 <span>G{generationId}.</span>
                 <span>I{dragonId}. </span>
                 { traits.map(trait => trait.traitValue).join(', ') }
