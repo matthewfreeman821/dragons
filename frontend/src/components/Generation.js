@@ -33,10 +33,6 @@ class Generation extends Component {
 
         const { generation } = this.props;
 
-        if (generation.status === fetchStates.fetching) {
-            return <div>...</div>;
-        }
-
         if (generation.status === fetchStates.error) {
             return <div>{generation.message}</div>;
         }
