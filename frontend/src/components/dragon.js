@@ -9,7 +9,7 @@ class Dragon extends Component {
         return (
             // <div className="container">
                 //<div className="row">
-                    <div className="col-md-3">
+                    <div className="col-lg-3 dragon-information">
                         <DragonAvatar dragon={this.props.dragon} />
                         <Button className="btn-primary"onClick={this.props.fetchDragon}>New Dragon</Button>
                     </div>
