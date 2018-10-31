@@ -7,14 +7,14 @@ import { fetchDragon } from '../actions/dragon';
 class Dragon extends Component {
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6">
+            // <div className="container">
+                //<div className="row">
+                    <div className="col-md-3">
                         <DragonAvatar dragon={this.props.dragon} />
                         <Button className="btn-primary"onClick={this.props.fetchDragon}>New Dragon</Button>
                     </div>
-                </div>
-            </div>
+                // </div>
+            // </div>
         );
     }
 }
