@@ -39,7 +39,8 @@ class Generation extends Component {
 
         return (
             <div className="col-md-3">
-                <h3>Generation {generation.generationId}. Expires on:</h3>
+                <h3>Generation {generation.generationId}</h3>
+                <h3> Expires on:</h3>
                 <h4>{new Date(generation.expiration).toString()}</h4>
             </div>
         )
