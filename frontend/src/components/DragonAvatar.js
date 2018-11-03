@@ -43,7 +43,7 @@ class DragonAvatar extends Component {
 
         return (
             // <div className="col-md-3">
-                <div className="card">
+                <div className="card dragon-image">
                     { this.DragonImage }
                     <div className="card-body">
                         <div className="card-title">
