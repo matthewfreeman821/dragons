@@ -13,6 +13,14 @@ class AuthForm extends Component {
         this.setState({ password: event.target.value })
     }
 
+    signup = () => {
+        console.log('this.state', this.state);
+    }
+
+    login = () => {
+        console.log('this.state', this.state);
+    }
+
     render() {
         return (
             <div>
@@ -34,9 +42,9 @@ class AuthForm extends Component {
                     />
                 </FormGroup>
                 <div>
-                    <Button>Log In</Button>
+                    <Button onClick={this.login}>Log In</Button>
                     <span> or </span>
-                    <Button>Sign Up</Button>
+                    <Button onClick={this.signup}>Sign Up</Button>
                 </div>
             </div>
         );
