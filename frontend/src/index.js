@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+import Root from './components/Root';
 import './index.css';
 
 const store = createStore(
@@ -14,7 +15,7 @@ const store = createStore(
 
 render(
     <Provider store={store}>
-        
+        <Root />
     </Provider>,
     document.getElementById('root')
 );
