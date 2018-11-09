@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Home from './Home';
 
 class Root extends Component {
     render() {
         return(
             //ternary expression
-            true ? <ComponentOne /> : <ComponentTwo />
+            true ? <Home /> : <ComponentTwo />
         )
     }
 };
