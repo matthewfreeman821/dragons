@@ -4,6 +4,15 @@ import { Button, FormGroup, FormControl } from 'react-bootstrap';
 class AuthForm extends Component {
     state = { username: '', password: '' };
 
+    //Can be abstracted to one function by taking an input of type to determine what piece of state needs to be updated, not necessary at this time
+    updateUsername = event => {
+        this.setState({ username: event.target.value })
+    }
+
+    updatePassword = event => {
+        this.setState({ password: event.target.value })
+    }
+
     render() {
         return (
             <div>
@@ -13,6 +22,7 @@ class AuthForm extends Component {
                         type='text'
                         value={this.state.username}
                         placeholder='username'
+                        onChange={this.updateUsername}
                     />
                 </FormGroup>
                 <FormGroup>
@@ -20,6 +30,7 @@ class AuthForm extends Component {
                         type='password'
                         value={this.state.password}
                         placeholder='password'
+                        onChange={this.updatePassword}
                     />
                 </FormGroup>
                 <div>
