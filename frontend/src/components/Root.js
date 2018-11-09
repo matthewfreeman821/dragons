@@ -6,7 +6,7 @@ class Root extends Component {
     render() {
         return(
             //ternary expression
-            true ? <Home /> : <AuthForm />
+            false ? <Home /> : <AuthForm />
         )
     }
 };
