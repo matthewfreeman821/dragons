@@ -43,7 +43,7 @@ const authenticatedAccount = ({ sessionString }) => {
     
             error.statusCode = 400;
     
-            return next(error);
+            return reject(error);
         } else {
             const { username, id } = Session.parse(sessionString);
     
@@ -51,11 +51,11 @@ const authenticatedAccount = ({ sessionString }) => {
                 .then(({ account }) => {
                     const authenticated = account.sessionId === id;
     
-                    res.json({ authenticated });
+                    resolve({ account, authenticated });
                 })
-                .catch(error => next(error));
+                .catch(error => reject(error));
         }
-    })
+    });
 };
 
-module.exports = { setSession };
+module.exports = { setSession, authenticatedAccount };

@@ -2,7 +2,7 @@ const { Router } = require('express');
 const AccountTable = require('../account/table');
 const Session = require('../account/session');
 const { hash } = require('../account/helper');
-const { setSession } = require('./helper');
+const { setSession, authenticatedAccount } = require('./helper');
 
 const router = new Router();
 
@@ -66,6 +66,10 @@ router.get('/logout', (req, res, next) => {
 
 router.get('/authenticated', (req, res, next) => {
     const { sessionString } = req.cookies;
+
+    authenticatedAccount({ sessionString })
+        .then(({ authenticated }) => res.json({ authenticated }))
+        .catch(error => next(error));
 });
 
 module.exports = router;
