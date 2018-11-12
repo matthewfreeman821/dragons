@@ -4,4 +4,8 @@ import dragon from './dragon';
 import account from './account';
 import accountDragons from './accountDragons';
 
-export default combineReducers({ account, dragon, generation, accountDragons });
+export default combineReducers({ 
+    account, 
+    dragon, 
+    generation, 
+    accountDragons });
