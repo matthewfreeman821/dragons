@@ -18,11 +18,4 @@ class Home extends Component {
     }
 }
 
-fetch('http://localhost:3000/account/dragons', {
-    credentials: 'include'
-})
-    .then(response => response.json())
-    .then(json => console.log('account dragons', json))
-    .catch(error => console.error(error));
-
 export default connect(null, { logout })(Home);
