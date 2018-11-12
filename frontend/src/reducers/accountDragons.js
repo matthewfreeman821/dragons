@@ -1,4 +1,4 @@
-import { ACCOUNT_DRAGONS, ACCOUNT } from '../actions/types';
+import { ACCOUNT_DRAGONS } from '../actions/types';
 import fetchStates from './fetchStates';
 
 const DEFAULT_ACCOUNT_DRAGONS = { dragons: [] };
