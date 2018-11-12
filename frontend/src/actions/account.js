@@ -1,7 +1,7 @@
 import { ACCOUNT } from './types';
 import { BACKEND } from '../config';
 
-const fetchFromAccount = ({ endpoint, options, SUCCESS_TYPE }) => dispatch => {
+export const fetchFromAccount = ({ endpoint, options, SUCCESS_TYPE }) => dispatch => {
     dispatch({ type: ACCOUNT.FETCH });
 
     return fetch(`${BACKEND.ADDRESS}/account/${endpoint}`, options)
