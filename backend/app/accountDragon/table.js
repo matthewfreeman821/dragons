@@ -14,6 +14,20 @@ class AccountDragonTable {
             )
         });
     }
+
+    static getAccountDragons({ accountId }) {
+        return new Promise((resolve, reject) => {
+            pool.query(
+                `SELECT "dragonId" FROM accountDragon WHERE "accountId" = $1`,
+                [accountId],
+                (error, response) => {
+                    if (error) return reject(error);
+
+                    resolve({ accountDragons: response.rows });
+                } 
+            )
+        });
+    }
 }
 
 // Below is debugging code to check that the functions above work properly
@@ -22,5 +36,10 @@ class AccountDragonTable {
 // })
 // .then(() => console.log('stored account dragon'))
 // .catch(error => console.error('error', error));
+
+//Below is debugging code to check that the function works properly
+// AccountDragonTable.getAccountDragons({ accountId: 1 })
+//     .then(({ accountDragons }) => console.log('accountDragons', accountDragons))
+//     .catch(error => console.error('error', error));
 
 module.exports = AccountDragonTable;
