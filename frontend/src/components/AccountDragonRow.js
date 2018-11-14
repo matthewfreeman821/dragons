@@ -14,3 +14,5 @@ class AccountDragonRow extends Component {
         )
     }
 }
+
+export default AccountDragonRow;
