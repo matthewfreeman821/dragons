@@ -25,7 +25,7 @@ store.dispatch(fetchAuthenticated())
             <Provider store={store}>
                 <Router history={history}>
                     <Switch>
-                        <Route path='/' component={Root} />
+                        <Route exact path='/' component={Root} />
                         <Route path='/account-dragons' component={AccountDragons} />
                     </Switch>
                 </Router>
