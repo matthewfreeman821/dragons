@@ -36,7 +36,7 @@ class AccountDragonRow extends Component {
                 <br />
                 <DragonAvatar dragon={this.props.dragon} />
                 {
-                    this.sate.edit ? this.SaveButton : this.EditButton
+                    this.state.edit ? this.SaveButton : this.EditButton
                 }
             </div>
         )
