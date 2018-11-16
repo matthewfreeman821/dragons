@@ -20,9 +20,9 @@ class AccountDragonRow extends Component {
     save = () => {
         fetch(`${BACKEND.ADDRESS}/dragon/update`, {
             method: 'PUT',
-            headers: { 'CONTENT-TYPE': 'application/json'},
+            headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({
-                dragonId: this.props.dragonId, nickname: this.state.nickname
+                dragonId: this.props.dragon.dragonId, nickname: this.state.nickname
             })
         })
             .then(response => response.json())
