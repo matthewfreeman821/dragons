@@ -12,7 +12,7 @@ class AccountDragons extends Component {
     render() {
         return (
             <div className="container">
-                <div className="container">
+                <div className="container home-link">
                     <Link to='/'>Home</Link>
                 </div>
                 <div>
