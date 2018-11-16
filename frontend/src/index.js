@@ -19,11 +19,11 @@ const store = createStore(
     applyMiddleware(thunk)
 );
 
-const RedirectToAccountDragons = () => {
-    return (
-        <Redirect to={{ pathname: '/account-dragons' }} />
-    );
-}
+// const RedirectToAccountDragons = () => {
+//     return (
+//         <Redirect to={{ pathname: '/account-dragons' }} />
+//     );
+// }
 
 store.dispatch(fetchAuthenticated())
     .then(() => {
@@ -33,7 +33,6 @@ store.dispatch(fetchAuthenticated())
                     <Switch>
                         <Route exact path='/' component={Root} />
                         <Route path='/account-dragons' component={AccountDragons} />
-                        <Route path='/redirect-to-account-dragons' component={RedirectToAccountDragons} />
                     </Switch>
                 </Router>
             </Provider>,
