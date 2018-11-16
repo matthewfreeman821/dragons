@@ -18,7 +18,9 @@ class Home extends Component {
                 <Generation />
                 <Dragon />
                 <hr />
-                <Link to='/account-dragons'>Account Dragons</Link>
+                <div className="container">
+                    <Link to='/account-dragons'>Account Dragons</Link>
+                </div>
             </div>
         );
     }

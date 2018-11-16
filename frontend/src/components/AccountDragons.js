@@ -11,19 +11,23 @@ class AccountDragons extends Component {
 
     render() {
         return (
-            <div>
-                <h3>Account Dragons</h3>
-                {
-                    this.props.accountDragons.dragons.map(dragon => {
-                        return(
-                            <div key ={dragon.dragonId}>
-                                <AccountDragonRow dragon={dragon} />
-                                <hr />
-                            </div>
-                        )
-                    })
-                }
-                <Link to='/'>Home</Link>
+            <div className="container">
+                <div className="container">
+                    <Link to='/'>Home</Link>
+                </div>
+                <div>
+                    <h3>Account Dragons</h3>
+                    {
+                        this.props.accountDragons.dragons.map(dragon => {
+                            return(
+                                <div key ={dragon.dragonId}>
+                                    <AccountDragonRow dragon={dragon} />
+                                    <hr />
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         );
     }
