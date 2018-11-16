@@ -4,6 +4,11 @@ body {
     font-size: 20px;
 }
 
+.home-link {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
 
 .logout-button {
     position: absolute;
