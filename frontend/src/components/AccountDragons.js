@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { fetchAccountDragons } from '../actions/accountDragons';
 import AccountDragonRow from './AccountDragonRow';
@@ -13,7 +14,7 @@ class AccountDragons extends Component {
         return (
             <div className="container">
                 <div className="container home-link">
-                    <Link to='/'>Home</Link>
+                    <Button><Link to='/'>Home</Link></Button>
                 </div>
                 <div>
                     <h3>Account Dragons</h3>
