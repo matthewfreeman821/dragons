@@ -5,7 +5,7 @@ body {
 }
 
 
-.logout-button {
+.logout-button, .home-button {
     position: absolute;
     right: 30px;
     top: 30px;
