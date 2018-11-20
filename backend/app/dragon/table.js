@@ -48,17 +48,23 @@ class DragonTable {
     }
 
     static updateDragon({ dragonId, nickname, isPublic, saleValue }) {
-        return new Promise((resolve, reject) => {
-            pool.query(
-                `UPDATE dragon SET nickname = $1, "isPublic" = $2, "saleValue" = $3 WHERE id = $4`,
-                [nickname, isPublic, saleValue, dragonId],
-                (error, response) => {
-                    if (error) return reject(error);
+        const settingsMap = { nickname, isPublic, saleValue };
 
-                    resolve();
-                }
-            )
+        Object.entries(settingsMap).filter(([settingKey, settingValue]) => {
+            console.log('settingKey', settingKey, 'settingValue', settingValue);
         });
+
+        // return new Promise((resolve, reject) => {
+        //     pool.query(
+        //         `UPDATE dragon SET nickname = $1, "isPublic" = $2, "saleValue" = $3 WHERE id = $4`,
+        //         [nickname, isPublic, saleValue, dragonId],
+        //         (error, response) => {
+        //             if (error) return reject(error);
+
+        //             resolve();
+        //         }
+        //     )
+        // });
     }
 }
 
@@ -68,5 +74,12 @@ class DragonTable {
 // DragonTable.getDragon({ dragonId: 1 })
 //     .then(dragon => console.log(dragon))
 //     .catch(error => console.error(error));
+
+///////////////////////////////////////////////////
+// Below debugs to ensure getDragon function works
+//////////////////////////////////////////////////
+DragonTable.updateDragon({ dragonId: 1, nickname: 'Farvanaugh' })
+    .then(() => console.log('successfully updated dragon'))
+    .catch(error => console.error(error));
 
 module.exports = DragonTable;
