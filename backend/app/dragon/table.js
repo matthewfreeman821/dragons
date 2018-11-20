@@ -80,8 +80,8 @@ class DragonTable {
 ///////////////////////////////////////////////////
 // Below debugs to ensure getDragon function works
 //////////////////////////////////////////////////
-DragonTable.updateDragon({ dragonId: 1, nickname: 'Farvanaugh' })
-    .then(() => console.log('successfully updated dragon'))
-    .catch(error => console.error('error', error));
+// DragonTable.updateDragon({ dragonId: 1, nickname: 'Farvanaugh' })
+//     .then(() => console.log('successfully updated dragon'))
+//     .catch(error => console.error('error', error));
 
 module.exports = DragonTable;
