@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import DragonAvatar from './DragonAvatar';
 import {BACKEND } from '../config';
+import history from '../history';
 
 class PublicDragonRow extends Component {
     buy = () => {
@@ -16,6 +17,10 @@ class PublicDragonRow extends Component {
         .then(response => response.json())
         .then(json => {
             alert(json.message);
+
+            if (json.type !== error) {
+                history.push('/account-dragons');
+            }
         })
         .catch(error => alert(error.message));
     };
