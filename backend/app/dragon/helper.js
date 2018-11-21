@@ -30,7 +30,7 @@ const getDragonWithTraits = ({ dragonId }) => {
 const getPublicDragons = () => {
     return new Promise((resolve, reject) => {
         pool.query(
-            `SELECT id FROM dragon WHERE "ispublic" = TRUE`,
+            `SELECT id FROM dragon WHERE "isPublic" = TRUE`,
             (error, response) => {
                 if (error) return reject(error);
 
