@@ -13,7 +13,7 @@ class AccountDragonTable {
                 }
             )
         });
-    }
+    };
 
     static getAccountDragons({ accountId }) {
         return new Promise((resolve, reject) => {
@@ -27,7 +27,22 @@ class AccountDragonTable {
                 } 
             )
         });
-    }
+    };
+
+    static getDragonAccount({ dragonId }) {
+        return new Promise((resolve, reject) => {
+            pool.query(
+                `SELECT "accountId" FROM accountDragon WHERE "dragonId" = $1`,
+                [dragonId],
+                (error, response) => {
+                    if (error) return reject(error);
+
+                    resolve({ accountId: response.rows[0].accountId })
+                }
+            )
+        });
+    };
+    
 }
 
 // Below is debugging code to check that the functions above work properly
