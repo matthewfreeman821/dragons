@@ -56,4 +56,4 @@ const getPublicDragons = () => {
 //     .then(dragon => console.log('dragon', dragon))
 //     .catch(error => console.error('error', error));
 
-module.exports = { getDragonWithTraits };
+module.exports = { getDragonWithTraits, getPublicDragons };
