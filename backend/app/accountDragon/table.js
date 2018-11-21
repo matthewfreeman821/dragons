@@ -42,7 +42,20 @@ class AccountDragonTable {
             )
         });
     };
-    
+
+    static updateDragonAccount({ dragonId, accountId }) {
+        return new Promise((resolve, reject) => {
+            pool.query(
+                `UPDATE accountDragon SET "accountId" = $1 WHERE "dragonId" = $2`,
+                [accountId, dragonId],
+                (error, response) => {
+                    if (error) return reject(error);
+
+                    resolve();
+                }
+            )
+        });
+    };
 }
 
 // Below is debugging code to check that the functions above work properly
