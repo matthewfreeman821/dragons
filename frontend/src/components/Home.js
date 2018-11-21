@@ -22,6 +22,8 @@ class Home extends Component {
                 <AccountInfo />
                 <div className="container">
                     <Link to='/account-dragons'>Account Dragons</Link>
+                    <br />
+                    <Link to='/public-dragons'>Public Dragons</Link>
                 </div>
             </div>
         );
