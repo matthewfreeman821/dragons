@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import DragonAvatar from './DragonAvatar';
-import {BACKEND } from '../config';
+import { BACKEND } from '../config';
 import history from '../history';
 
 class PublicDragonRow extends Component {
@@ -18,7 +18,7 @@ class PublicDragonRow extends Component {
         .then(json => {
             alert(json.message);
 
-            if (json.type !== error) {
+            if (json.type !== 'error') {
                 history.push('/account-dragons');
             }
         })
