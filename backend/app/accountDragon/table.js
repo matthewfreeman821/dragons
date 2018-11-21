@@ -70,4 +70,13 @@ class AccountDragonTable {
 //     .then(({ accountDragons }) => console.log('accountDragons', accountDragons))
 //     .catch(error => console.error('error', error));
 
+//Below will debug the appropriate functions
+// AccountDragonTable.getDragonAccount({ dragonId: 3 })
+//     .then(({ accountId }) => console.log('accountId', accountId))
+//     .catch(error => console.error('error', error));
+
+// AccountDragonTable.updateDragonAccount({ dragonId: 3, accountId: 1 })
+//     .then(() => console.log('success'))
+//     .catch(error => console.error('error', error));
+
 module.exports = AccountDragonTable;
