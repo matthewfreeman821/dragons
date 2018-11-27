@@ -82,6 +82,7 @@ class AccountDragonRow extends Component {
                             disabled={!this.state.edit}
                             value={this.state.saleValue}
                             onChange={this.updateSaleValue}
+                            className="account-dragon-row-input"
                         />
                     </span>{' '}
                     <span>
@@ -91,6 +92,7 @@ class AccountDragonRow extends Component {
                             disabled={!this.state.edit}
                             value={this.state.sireValue}
                             onChange={this.updateSireValue}
+                            className="account-dragon-row-input"
                         />
                     </span>{' '}
                     <span>
