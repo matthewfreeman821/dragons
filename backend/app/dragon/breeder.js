@@ -21,7 +21,7 @@ class Breeder {
             });
         });
 
-        return new this.breedDragon({ nickname: 'Unnamed baby', traits: babyTraits });
+        return new Dragon({ nickname: 'Unnamed baby', traits: babyTraits });
     }
 
     // Two incoming traits: matronTrait and patronTrait
@@ -49,5 +49,15 @@ class Breeder {
         );
     }
 }
+
+const fooby = new Dragon();
+const gooby = new Dragon();
+
+console.log('fooby', fooby);
+console.log('gooby', gooby);
+
+const foogooby = Breeder.breedDragon({ matron: fooby, patron: gooby });
+
+console.log('foogooby', foogooby);
 
 module.exports = Breeder;
