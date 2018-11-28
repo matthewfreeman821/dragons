@@ -18,6 +18,7 @@ class Dragon extends Component {
         return (
             <div className="col-lg-3 dragon-information">
                 <Button className="btn-primary" onClick={this.props.fetchDragon}>New Dragon</Button>
+                <br />
                 { this.DragonView }
             </div>
         );
