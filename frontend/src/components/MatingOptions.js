@@ -5,7 +5,7 @@ import { BACKEND } from '../config';
 import history from '../history';
 
 class MatingOptions extends Component {
-    mate = ({ matronDragonId, patronDragonId }) => {
+    mate = ({ matronDragonId, patronDragonId }) => () => {
         fetch(`${BACKEND.ADDRESS}/dragon/mate`, {
             method: 'POST',
             credentials: 'include',
