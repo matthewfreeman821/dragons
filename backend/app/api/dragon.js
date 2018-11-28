@@ -2,6 +2,7 @@ const { Router } = require('express');
 const DragonTable = require('../dragon/table');
 const AccountDragonTable = require('../accountDragon/table');
 const AccountTable = require('../account/table');
+const Breeder = require('../dragon/breeder');
 const { authenticatedAccount } = require('./helper');
 const { getPublicDragons, getDragonWithTraits } = require('../dragon/helper');
 
@@ -104,6 +105,7 @@ router.post('/mate', (req, res, next) => {
     }
 
     let matronDragon, patronDragon, patronSireValue;
+    let matronAccountId, patronAccountId;
 
     getDragonWithTraits({ dragonId: patronDragonId })
         .then(dragon => {
@@ -127,6 +129,36 @@ router.post('/mate', (req, res, next) => {
             if (patronSireValue > account.balance) {
                 throw new Error('Sire value exceeds balance');
             }
+
+            matronAccountId = account.id;
+
+            return AccountDragonTable.getDragonAccount({ dragonId: patronDragonId });
+        })
+        .then(({ accountId }) => {
+            patronAccountId = accountId;
+
+            if (matronAccountId === patronAccountId) {
+                throw new Error('Cannot breed your own dragons!');
+            }
+
+            const dragon = Breeder.breedDragon({ matron: matronDragon, patron: patronDragon });
+
+            return DragonTable.storeDragon(dragon);
+        })
+        .then(({ dragonId }) => {
+            Promise.all([
+                AccountTable.updateBalance({
+                    accountId: matronAccountId, value: -patronSireValue
+                }),
+                AccountTable.updateBalance({
+                    accountId: patronAccountId, value: patronSireValue
+                }),
+                AccountDragonTable.storeAccountDragon({
+                    dragonId, accountId: matronAccountId
+                })
+            ])
+            .then(() => res.json({ message: 'Success!' }))
+            .catch(error => next(error));
         })
 });
 
