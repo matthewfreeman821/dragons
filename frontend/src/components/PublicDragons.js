@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { fetchPublicDragons } from '../actions/publicDragons';
 import { fetchAccountDragons } from '../actions/accountDragons';
 import { Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ class PublicDragons extends Component {
         return (
             <div>
                 <h3>Public Dragons</h3>
-                <Link to ='/'>Home</Link>
+                <Button className='home-button'><Link to='/'>Home</Link></Button>
                 {
                     this.props.publicDragons.dragons.map(dragon => {
                         return (
